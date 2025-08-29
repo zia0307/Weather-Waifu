@@ -7,21 +7,20 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "electron": "electron .",
-    "package": "npm run build && electron-packager . WeatherWaifu --platform=win32 --arch=x64 --overwrite --icon=icon.png",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-},
+  },
   "author": "Zia Kadijah",
   "dependencies": {
-    "gh-pages": "^6.3.0",
+    "gh": "^2.8.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1"
   },
   "devDependencies": {
     "electron": "^29.0.0",
-    "electron-packager": "^17.1.1"
+    "electron-packager": "^17.1.1",
+    "gh-pages": "^6.3.0"
   },
   "browserslist": {
     "production": [
