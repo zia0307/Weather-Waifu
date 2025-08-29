@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A cute weather app where your favorite waifu reads the weather out loud for you mwah.",
   "main": "electron.js",
-  "homepage": "https://zia0307.github.io/WeatherWaifu/",
+  "homepage": "https://zia0307.github.io/Weather-Waifu/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
