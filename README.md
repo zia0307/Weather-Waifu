@@ -20,7 +20,7 @@ If you want to run from source:
 
 bash
 # Clone the repository
-git clone https://github.com/zia0307/WeatherWaifu.git
+git clone https://github.com/zia0307/Weather-Waifu.git
 
 # Navigate to the directory
 cd WeatherWaifu
