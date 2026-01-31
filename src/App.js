@@ -54,32 +54,40 @@ function App() {
           setIsTalking(true);
 
           fetch("https://api.elevenlabs.io/v1/text-to-speech/" + selectedVoice, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "xi-api-key": WAIFU_apiKey
-            },
-            body: JSON.stringify({
-              text: message,
-              model_id: "eleven_monolingual_v1",
-              voice_settings: {
-                stability: 0.5,
-                similarity_boost: 0.8
-              }
-            })
-          })
-            .then(res => res.blob())
-            .then(blob => {
-              const audioUrl = URL.createObjectURL(blob);
-              const audio = new Audio(audioUrl);
-              audio.play();
-              audio.onended = () => setIsTalking(false);
-              audio.onerror = (err) => console.error("Audio error:", err);
-            })
-            .catch(err => {
-              console.error("Failed to fetch audio:", err);
-              setIsTalking(false);
-            });
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "xi-api-key": WAIFU_apiKey
+  },
+  body: JSON.stringify({
+    text: message,
+    model_id: "eleven_turbo_v2_5",
+    voice_settings: {
+      stability: 0.5,
+      similarity_boost: 0.8
+    }
+  })
+})
+.then(res => {
+  if (!res.ok) {
+    return res.text().then(t => {
+      throw new Error(`HTTP ${res.status}: ${t}`);
+    });
+  }
+  return res.blob();
+})
+.then(blob => {
+  console.log("Blob type:", blob.type); // 👈 IMPORTANT DEBUG
+  const audioUrl = URL.createObjectURL(blob);
+  const audio = new Audio(audioUrl);
+  audio.play();
+  audio.onended = () => setIsTalking(false);
+})
+.catch(err => {
+  console.error("TTS failed:", err);
+  setIsTalking(false);
+});
+
 
           setWeather({ temp, desc });
         } else {
