@@ -1,36 +1,38 @@
-Weather Waifu App:
- A unique ReactJS application that brings your favourite anime waifu to life to narrate the weather forecast to you with text-to-speech capabilities.
+Weather Waifu App
 
-->Personalised Weather Reports: Get current weather conditions for any location
+Weather Waifu is a React-based application that delivers weather forecasts through an interactive anime-style character with text-to-speech narration.
 
-
-->Anime Waifu Narration: Your favourite anime character speaks the weather forecast with text-to-speech
-
-
-->Customizable Experience: Choose different voices and characters
-
-# Prerequisites:
-ReactJS and Node.js
-API keys for weather and voice services
-
-
-# For Development:
-
-If you want to run from source:
-
-bash
-# Clone the repository
+Features
+Real-time weather information for any location
+Text-to-speech narration of weather reports
+Selectable voices and characters for a customizable experience
+Prerequisites
+Node.js and npm
+API keys for:
+Weather service (OpenWeatherMap)
+Text-to-speech service (ElevenLabs)
+Getting Started
+1. Clone the Repository
 git clone https://github.com/zia0307/Weather-Waifu.git
-
-# Navigate to the directory
 cd WeatherWaifu
-
-# Install dependencies
+2. Install Dependencies
 npm install
+3. Configure Environment Variables
 
-# Start the development server
+Create a .env file in the root directory and add your API keys:
+
+REACT_APP_WEATHER_API_KEY=your_openweather_key
+REACT_APP_TTS_API_KEY=your_elevenlabs_key
+4. Start the Development Server
 npm start
 
-# API KEYS USED:
-Weather API from OpenWeatherMap
-Text-to-Speech API from Elevenlabs
+The application will be available at http://localhost:3000.
+
+Tech Stack
+React.js
+Node.js
+OpenWeatherMap API
+ElevenLabs Text-to-Speech API
+Notes
+Ensure API keys are valid and properly configured
+Do not expose your API keys in public repositories
